@@ -779,144 +779,147 @@
         }
         
         /* Modais de produto */
-        .product-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: rgba(30, 30, 30, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            width: 90%;
-            max-width: 900px;
-            border: 1px solid #e91e63;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 30px;
-            cursor: pointer;
-            color: #ccc;
-        }
-        
-        .close-modal:hover {
-            color: #e91e63;
-        }
-        
-        .modal-product-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .product-gallery {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .modal-main-image {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(40, 40, 40, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .modal-main-image img {
-            max-width: 100%;
-            max-height: 300px;
-        }
-        
-        .modal-thumbnails {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .modal-thumbnail {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
-            overflow: hidden;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: all 0.3s;
-        }
-        
-        .modal-thumbnail.active {
-            opacity: 1;
-            border: 2px solid #e91e63;
-        }
-        
-        .modal-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .product-info {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .modal-product-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        
-        .product-price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #e91e63;
-            margin: 10px 0 20px;
-        }
-        
-        .product-description {
-            color: #aaa;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .product-features {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .product-features li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-            color: #ccc;
-        }
-        
-        .product-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #e91e63;
-        }
-        
-        .product-actions {
-            margin-top: auto;
-        }
-        
+.product-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 900px;
+    border: 1px solid #e91e63;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.modal-content.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.close-modal:hover {
+    color: #e91e63;
+}
+
+.modal-product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-main-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 300px;
+}
+
+.modal-main-image img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-product-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e91e63;
+    margin: 10px 0 20px;
+}
+
+.product-description {
+    color: #aaa;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.product-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.product-features li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #ccc;
+}
+
+.product-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #e91e63;
+}
+
+.product-actions {
+    margin-top: auto;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .modal-product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-main-image {
+        min-height: 200px;
+    }
+    
+    .modal-main-image img {
+        max-height: 250px;
+    }
+}
         /* Formulário de endereço */
         .address-form {
             display: flex;
@@ -1003,6 +1006,58 @@
             color: #ccc;
         }
         
+        .modal-buy-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #9c27b0, #e91e63);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+        
+        .modal-buy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            background: #128C7E;
+        }
+        
         @keyframes pulse {
             0% { opacity: 0.5; }
             50% { opacity: 1; }
@@ -1038,6 +1093,11 @@
             
             .modal-product-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
             }
         }
         
@@ -1178,11 +1238,11 @@
                     
                     <div class="products-carousel">
                         <div class="carousel-container" id="acessoriosCarousel">
-                            <!-- Acessórios -->
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Anel+Vibrador" alt="Anel Peniano Vibrador">
+                                        <img src="Acessorios/Anel Peniano Vibrador/7ab29215b7a4720061fb96feea42c1c5.webp" alt="Anel Peniano Vibrador">
+                                        
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Anel Peniano Vibrador</h3>
@@ -1195,7 +1255,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Algemas+Veludo" alt="Algemas de Veludo">
+                                        <img src="Acessorios/Algemas de Veludo/312542336900cdad348d0f478f567f2e-593f4aff9a51826d4417430149570016-640-0.webp" alt="Algemas de Veludo">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Algemas de Veludo</h3>
@@ -1208,7 +1268,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=M%C3%A1scara+Sensual" alt="Máscara Sensual">
+                                        <img src="Acessorios/Máscara Sensual/61ghdNPnzsL._AC_SX569_.jpg" alt="Máscara Sensual">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Máscara Sensual</h3>
@@ -1221,7 +1281,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Vela+Arom%C3%A1tica" alt="Vela Aromática Sensual">
+                                        <img src="Acessorios/Vela Aromática Sensual/1105269_2_1638282718.jpg" alt="Vela Aromática Sensual">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Vela Aromática Sensual</h3>
@@ -1234,7 +1294,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Gel+Termog%C3%AAnico" alt="Gel Termogênico">
+                                        <img src="Acessorios/Gel Termogênico/D_NQ_NP_832117-MLB47278389348_082021-O.webp" alt="Gel Termogênico">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Gel Termogênico</h3>
@@ -1247,7 +1307,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Spray+Estimulante" alt="Spray Estimulante">
+                                        <img src="Acessorios/Spray Estimulante/D_NQ_NP_776500-MLB84461593310_052025-O-2x-energizesense-spray-azulzinho-cavalo-potencializa-prazer.webp" alt="Spray Estimulante">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Spray Estimulante</h3>
@@ -1260,7 +1320,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Bolas+Chinesas" alt="Bolas Chinesas">
+                                        <img src="Acessorios/Bolas Chinesas/D_NQ_NP_873018-MLB84134547389_042025-O.webp" alt="Bolas Chinesas">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Bolas Chinesas</h3>
@@ -1273,7 +1333,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Lubrificante" alt="Lubrificante Íntimo">
+                                        <img src="Acessorios/Lubrificante Íntimo/kit-xana-loka-gel-excitante-vibra-es-ku-loko-dessensibilizante-prazer-orgasmo-jpg_-d8d0cb234f5a8b441d17324727619004-640-0.webp" alt="Lubrificante Íntimo">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Lubrificante Íntimo</h3>
@@ -1286,7 +1346,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Pincel+Penas" alt="Pincel de Penas">
+                                        <img src="Acessorios/Pincel de Penas/D_NQ_NP_723282-CBT83375494002_042025-O--sex-whip-ring-estimulador-sexual-choque-pnis.webp" alt="Pincel de Penas">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Pincel de Penas</h3>
@@ -1299,7 +1359,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Tapa+Olhos" alt="Tapa Olhos de Seda">
+                                        <img src="Acessorios/Tapa Olhos de Seda/D_NQ_NP_734665-MLB78766250393_082024-O-5-mascara-de-dormir-venda-olhos-tapa-olhos-confortavel.webp" alt="Tapa Olhos de Seda">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Tapa Olhos de Seda</h3>
@@ -1312,7 +1372,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Chicotinho" alt="Chicotinho de Couro">
+                                        <img src="Acessorios/Chicotinho de Couro/D_NQ_NP_652181-MLA82482930851_022025-O.webp" alt="Chicotinho de Couro">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Chicotinho de Couro</h3>
@@ -1325,7 +1385,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Coleira+Guizo" alt="Coleira com Guizo">
+                                        <img src="Acessorios/Coleira com Guizo/D_NQ_NP_886848-MLB74640932548_022024-O-coleira-gargantilha-gotica-e-girl-com-coraco-preta.webp" alt="Coleira com Guizo">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Coleira com Guizo</h3>
@@ -1338,7 +1398,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Cinta+Modeladora" alt="Cinta Modeladora">
+                                        <img src="Acessorios/Cinta Modeladora/D_NQ_NP_787211-MLB82353682231_022025-O-kit-2-pecas-cinta-modeladora-levanta-bumbum-e-modela-corpo.webp" alt="Cinta Modeladora">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Cinta Modeladora</h3>
@@ -1351,7 +1411,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Capa+Chuva" alt="Capa de Chuva Saborizada">
+                                        <img src="Acessorios/Capa de Chuva Saborizada/D_NQ_NP_752306-CBT76827726135_062024-O.webp" alt="Capa de Chuva Saborizada">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Capa de Chuva Saborizada</h3>
@@ -1364,7 +1424,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Dados+Er%C3%B3ticos" alt="Jogo de Dados Eróticos">
+                                        <img src="Acessorios/Jogo de Dados Eróticos/D_NQ_NP_898071-MLB76491504124_052024-O-baralho-erotico-casal-namorados-dados-eroticos-brinde.webp" alt="Jogo de Dados Eróticos">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Jogo de Dados Eróticos</h3>
@@ -1394,11 +1454,10 @@
                     
                     <div class="products-carousel">
                         <div class="carousel-container" id="penisCarousel">
-                            <!-- Pênis de Borracha -->
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Realista+18cm" alt="Realista 18cm">
+                                        <img src="Pênis de Borracha tag/Realista 18cm/protese-tpr-formato-realistico-penis-rosa-glande-veias-vibracao-multivelocidade-pink-vibe-185-x-39-cm-148145.jpg" alt="Realista 18cm">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Realista 18cm</h3>
@@ -1411,7 +1470,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Dupla+Estimula%C3%A7%C3%A3o" alt="Dupla Estimulação">
+                                        <img src="Pênis de Borracha tag/Dupla Estimulação/vibrador-estimulador-clitoris-ponto-g-recarregavel-12-modos-vibracoes-lingua-giratoria-aquecimento-intt-fogo-3-core-124622.jpg" alt="Dupla Estimulação">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Dupla Estimulação</h3>
@@ -1424,7 +1483,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Vibrador+Recarreg%C3%A1vel" alt="Vibrador Recarregável">
+                                        <img src="Pênis de Borracha tag/Vibrador Recarregável/vibrador-formato-penis-glande-definida-veias-salientes-9-modos-vibracoes-3-intensidades-movimento-s-hande-king-123131.jpg" alt="Vibrador Recarregável">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Vibrador Recarregável</h3>
@@ -1437,7 +1496,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Com+Ventosa" alt="Com Ventosa">
+                                        <img src="Pênis de Borracha tag/Com Ventosa/protese-realistica-recarregavel-10-modos-vibracao-7-movimentos-vai-vem-funcao-aquecimento-controle-remoto-fio-pake-130038.jpg" alt="Com Ventosa">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Ventosa</h3>
@@ -1450,7 +1509,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Realista+22cm" alt="Realista 22cm">
+                                        <img src="Pênis de Borracha tag/Realista 22cm/protese-peniana-realistica-ejaculadora-escroto-tpe-lovetoy-squirt-extreme-dildo-18-x-4-cm-141819.png" alt="Realista 22cm">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Realista 22cm</h3>
@@ -1463,7 +1522,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Com+Textura" alt="Com Textura">
+                                        <img src="Pênis de Borracha tag/Com Textura/lovetoy-joy-estimulador-penetrador-strapon-silicone-bullet-recarregavel-10-modos-vibracao-15-x-3-cm-64669.jpg" alt="Com Textura">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Textura</h3>
@@ -1476,7 +1535,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Fleshlight" alt="Fleshlight Masculino">
+                                        <img src="Pênis de Borracha tag/Fleshlight Masculino/bomba-peniana-manual-manopla-bombeamento-manometro-pressao-penis-pump-powerup-20-x-2-cm-145991.jpg" alt="Fleshlight Masculino">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Fleshlight Masculino</h3>
@@ -1489,7 +1548,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Estimulador+Clit%C3%B3ris" alt="Com Estimulador de Clitóris">
+                                        <img src="Pênis de Borracha tag/Com Estimulador de Clitóris/vibrador-ponto-g-clitoris-9-estimulos-modos-vibracao-recarregavel-man-thing-hua-aurora-ii-11-x-3-cm-138882.jpg" alt="Com Estimulador de Clitóris">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Estimulador de Clitóris</h3>
@@ -1502,7 +1561,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Realista+20cm" alt="Realista 20cm">
+                                        <img src="Pênis de Borracha tag/Realista 20cm/protese-peniana-realista-base-apoio-achatada-escroto-glande-definida-magic-sexy-16-x-44-cm-disponivel-2-cores-172686.png" alt="Realista 20cm">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Realista 20cm</h3>
@@ -1515,7 +1574,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Controle+Remoto" alt="Com Controle Remoto">
+                                        <img src="Pênis de Borracha tag/Com Controle Remoto/calcinha-bullet-recarregavel-10-modos-vibracao-controle-remoto-sem-fio-lovetoy-ingen-disponivel-3-tamanhos-139169.jpg" alt="Com Controle Remoto">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Controle Remoto</h3>
@@ -1528,7 +1587,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Silicone+M%C3%A9dico" alt="De Silicone Médico">
+                                        <img src="Pênis de Borracha tag/De Silicone Médico/vibrador-ponto-g-clitoris-motor-duplo-8-modos-vibracao-funcao-inflar-carregamento-via-cabo-usb-evolved-inflatble-114390.jpeg" alt="De Silicone Médico">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">De Silicone Médico</h3>
@@ -1541,7 +1600,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Pontos+Vibra%C3%A7%C3%A3o" alt="Com Pontos de Vibração">
+                                        <img src="Pênis de Borracha tag/Com Pontos de Vibração/S3165d882ebd946029dadffc0a36f3c20D.webp" alt="Com Pontos de Vibração">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Pontos de Vibração</h3>
@@ -1554,7 +1613,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Realista+25cm" alt="Realista 25cm">
+                                        <img src="Pênis de Borracha tag/Realista 25cm/D_NQ_NP_891494-MLB83189778968_042025-O-25cm-grande-consolo-negro-dildo-realistico-de-pnis-negro.webp" alt="Realista 25cm">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Realista 25cm</h3>
@@ -1567,7 +1626,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Com+Suc%C3%A7%C3%A3o" alt="Com Sucção">
+                                        <img src="Pênis de Borracha tag/Com Sucção/f5f0372f87e2d76918bf929ee78c509e.webp" alt="Com Sucção">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Sucção</h3>
@@ -1580,7 +1639,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Estimulador+Anal" alt="Com Estimulador Anal">
+                                        <img src="Pênis de Borracha tag/Com Estimulador Anal/sg-11134201-7rd4l-lun5g93th9bw66.jpeg" alt="Com Estimulador Anal">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Com Estimulador Anal</h3>
@@ -1610,11 +1669,10 @@
                     
                     <div class="products-carousel">
                         <div class="carousel-container" id="lingeriesCarousel">
-                            <!-- Lingeries -->
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Renda+Preta" alt="Conjunto de Renda Preta">
+                                        <img src="Lingeries/Conjunto de Renda Preta/sd-girl-conjunto-rendado-tiras-elasticas-ajustaveis-tamanho-unico-disponivel-2-cores-91636.jpg" alt="Conjunto de Renda Preta">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Conjunto de Renda Preta</h3>
@@ -1627,7 +1685,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Baby+Doll" alt="Baby Doll Vermelho">
+                                        <img src="Lingeries/Baby Doll Vermelho/conjunto-sem-bojo-estilo-strappy-bra-renda-universo-feminino-disponivel-2-cores-3-tamanhos-111441.jpg" alt="Baby Doll Vermelho">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Baby Doll Vermelho</h3>
@@ -1640,7 +1698,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Body+Rendado" alt="Body Rendado">
+                                         <img src="Lingeries/Body Rendado/baby-doll-cropped-renda-short-curtinho-exclusiva-lingerie-disponivel-4-tamanhos-171092.png" alt="Body Rendado">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Body Rendado</h3>
@@ -1653,7 +1711,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Fio+Dental" alt="Calcinha Fio Dental">
+                                         <img src="Lingeries/Calcinha Fio Dental/conjunto-agatha-renda-transparente-laco-amor-seducao-disponivel-3-tamanhos-4-cores-121262.jpg" alt="Calcinha Fio Dental">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Calcinha Fio Dental</h3>
@@ -1666,7 +1724,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Suti%C3%A3+Push-up" alt="Sutiã Push-up">
+                                        <img src="Lingeries/Sutiã Push-up/conjunto-bojo-luvas-cinta-liga-exclusiva-sexshop-lingerie-disponivel-4-tamanhos-150311.png"  alt="Sutiã Push-up">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Sutiã Push-up</h3>
@@ -1679,7 +1737,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Conjunto+Vermelho" alt="Conjunto Vermelho">
+                                         <img src="Lingeries/Baby Doll Vermelho/conjunto-sem-bojo-estilo-strappy-bra-renda-universo-feminino-disponivel-2-cores-3-tamanhos-111441.jpg" alt="Conjunto Vermelho">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Conjunto Vermelho</h3>
@@ -1692,7 +1750,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Body+Transparente" alt="Body Transparente">
+                                        <img src="Lingeries/Body Transparente/body-tule-detalhes-renda-com-bojo-alcas-corrente-garota-veneno-disponivel-4-tamanhos-2-cores-127516.jpg" alt="Body Transparente">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Body Transparente</h3>
@@ -1705,7 +1763,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="img/Lingeries/Conjunto Azul Royal/e5d444e74d8b73cf2b2ecf2e449af080.webp" alt="Conjunto Azul Royal">
+                                         <img src="Lingeries/Conjunto Azul Royal/e5d444e74d8b73cf2b2ecf2e449af080.webp" alt="Conjunto Azul Royal">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Conjunto Azul Royal</h3>
@@ -1718,7 +1776,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Lingerie+Couro" alt="Lingerie de Couro">
+                                         <img src="Lingeries/Lingerie de Couro/innamorata-sex-night-harness-body-sex-cinta-liga-coleira-93753.jpg" alt="Lingerie de Couro">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Lingerie de Couro</h3>
@@ -1731,7 +1789,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Conjunto+Branco" alt="Conjunto Branco">
+                                         <img src="Lingeries/Conjunto Branco/lingerie-sapeka-conjunto-ariane-rendado-disponivel-3-cores-4-tamanhos-79097.jpg" alt="Conjunto Branco">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Conjunto Branco</h3>
@@ -1744,7 +1802,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Body+Abertura" alt="Body com Abertura">
+                                        <img src="Lingeries/Body com Abertura/body-rendado-detalhe-perolas-par-luvas-dedo-garota-veneno-disponivel-3-cores-4-tamanhos-141662.png" alt="Body com Abertura">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Body com Abertura</h3>
@@ -1757,7 +1815,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Lingerie+Cetim" alt="Lingerie de Cetim">
+                                         <img src="Lingeries/Lingerie de Cetim/lingerie-sapeka-robe-cindy-tule-renda-tamanho-unico-disponivel-3-cores-79055.jpg" alt="Lingerie de Cetim">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Lingerie de Cetim</h3>
@@ -1770,7 +1828,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Conjunto+Roxo" alt="Conjunto Roxo">
+                                         <img src="Lingeries/Conjunto Azul Royal/e5d444e74d8b73cf2b2ecf2e449af080.webp" alt="Conjunto Roxo">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Conjunto Roxo</h3>
@@ -1782,8 +1840,8 @@
                             
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
-                                    <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Cinta-liga" alt="Cinta-liga com Meia">
+                                    <div class="product-image">Meia
+                                         <img src="Lingeries/Cinta-liga com/conjunto-cropped-sensual-tule-cinta-liga-garota-veneno-disponivel-4-tamanhos-124174.jpeg" alt="Cinta-liga com ">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Cinta-liga com Meia</h3>
@@ -1796,7 +1854,7 @@
                             <div class="carousel-item-wrapper">
                                 <div class="catalog-item">
                                     <div class="product-image">
-                                        <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Body+Renda+Vermelho" alt="Body de Renda Vermelho">
+                                         <img src="Lingeries/Body de Renda Vermelho/lingerie-sapeka-body-britney-disponivel-4-tamanhos-46172.jpg" alt="Body de Renda Vermelho">
                                     </div>
                                     <div class="catalog-info">
                                         <h3 class="catalog-title">Body de Renda Vermelho</h3>
@@ -1805,6 +1863,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                         
                         <div class="carousel-nav">
@@ -1989,15 +2048,12 @@
 
         <!-- Modal de Produto -->
         <div class="product-modal" id="productModal">
-            <div class="modal-content">
+            <div class="modal-content centered">
                 <span class="close-modal" id="closeProductModal">&times;</span>
                 <div class="modal-product-grid">
                     <div class="product-gallery">
                         <div class="modal-main-image">
                             <img id="modalMainImage" src="" alt="Imagem do produto">
-                        </div>
-                        <div class="modal-thumbnails" id="modalThumbnails">
-                            <!-- Thumbnails serão inseridos por JS -->
                         </div>
                     </div>
                     <div class="product-info">
@@ -2014,7 +2070,7 @@
                             <li>Entrega discreta em embalagem neutra</li>
                         </ul>
                         <div class="product-actions">
-                            <button class="cta-button" id="modalBuyBtn">Comprar Agora</button>
+                            <button class="modal-buy-btn" id="modalBuyBtn">Comprar Agora</button>
                         </div>
                     </div>
                 </div>
@@ -2023,9 +2079,9 @@
 
         <!-- Modal de Endereço -->
         <div class="product-modal" id="addressModal">
-            <div class="modal-content">
+            <div class="modal-content centered">
                 <span class="close-modal" id="closeAddressModal">&times;</span>
-                <h2 style="margin-bottom: 20px;">Endereço de Entrega</h2>
+                <h2 style="margin-bottom: 20px; text-align: center;">Endereço de Entrega</h2>
                 <form id="addressForm" class="address-form">
                     <div class="form-row">
                         <div class="form-group">
@@ -2100,7 +2156,7 @@
 
         <!-- Modal de Pagamento -->
         <div class="product-modal" id="paymentModal">
-            <div class="modal-content">
+            <div class="modal-content centered">
                 <span class="close-modal" id="closePaymentModal">&times;</span>
                 <div class="payment-modal-content">
                     <h2 style="margin-bottom: 15px;">Pagamento via PIX</h2>
@@ -2124,6 +2180,10 @@
                             <li>Realize o pagamento</li>
                         </ol>
                     </div>
+                    
+                    <button class="whatsapp-btn" id="sendWhatsappBtn">
+                        <i class="fab fa-whatsapp"></i> Enviar Comprovante via WhatsApp
+                    </button>
                     
                     <button class="modal-buy-btn" id="confirmPaymentBtn">Já efetuei o pagamento</button>
                 </div>
@@ -2173,13 +2233,13 @@
         let currentUser = null;
         let selectedProduct = null;
         let currentAddress = null;
+        let currentOrder = null;
 
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
             DB.init();
             loadSession();
             setupEventListeners();
-            setupProductModals();
         });
         
         function loadSession() {
@@ -2403,9 +2463,85 @@
             document.querySelectorAll('.catalog-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.stopPropagation();
+                    
+                    // Verificar se o usuário está logado
+                    if (!currentUser) {
+                        alert('Por favor, faça login para comprar.');
+                        openAuthModal();
+                        return;
+                    }
+                    
                     const productCard = this.closest('.carousel-item-wrapper');
                     openProductModal(productCard);
                 });
+            });
+            
+            // Fechar modais de produto
+            document.getElementById('closeProductModal').addEventListener('click', closeProductModal);
+            document.getElementById('closeAddressModal').addEventListener('click', closeAddressModal);
+            document.getElementById('closePaymentModal').addEventListener('click', closePaymentModal);
+            
+            // Botão Comprar na modal de produto
+            document.getElementById('modalBuyBtn').addEventListener('click', function() {
+                closeProductModal();
+                openAddressModal();
+            });
+            
+            // Formulário de endereço
+            document.getElementById('addressForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Obter dados do formulário
+                currentAddress = {
+                    cep: document.getElementById('cep').value,
+                    rua: document.getElementById('rua').value,
+                    numero: document.getElementById('numero').value,
+                    complemento: document.getElementById('complemento').value,
+                    bairro: document.getElementById('bairro').value,
+                    cidade: document.getElementById('cidade').value,
+                    estado: document.getElementById('estado').value
+                };
+                
+                // Criar objeto de pedido
+                currentOrder = {
+                    id: Math.floor(Math.random() * 1000000),
+                    product: selectedProduct,
+                    address: currentAddress,
+                    date: new Date().toISOString(),
+                    status: 'pending'
+                };
+                
+                closeAddressModal();
+                openPaymentModal();
+            });
+            
+            // Formatar CEP
+            document.getElementById('cep').addEventListener('input', function() {
+                this.value = formatCEP(this.value);
+            });
+            
+            // Botão de envio de comprovante por WhatsApp
+            document.getElementById('sendWhatsappBtn').addEventListener('click', function() {
+                const message = `Olá! Acabei de efetuar o pagamento do pedido #${currentOrder.id} no valor de ${selectedProduct.price}. Segue o comprovante em anexo.`;
+                const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+            
+            // Botão de confirmação de pagamento
+            document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
+                closePaymentModal();
+                
+                // Mostrar mensagem de sucesso
+                alert(`Obrigado pela compra!\n\nPedido #${currentOrder.id}\nProduto: ${selectedProduct.title}\nValor: ${selectedProduct.price}\n\nSeu pedido será enviado para:\n${currentAddress.rua}, ${currentAddress.numero}\n${currentAddress.bairro}, ${currentAddress.cidade}-${currentAddress.estado}\nCEP: ${currentAddress.cep}`);
+            });
+            
+            // Fechar modais ao clicar fora
+            window.addEventListener('click', function(event) {
+                if (event.target.classList.contains('product-modal')) {
+                    closeProductModal();
+                    closeAddressModal();
+                    closePaymentModal();
+                }
             });
         }
         
@@ -2422,29 +2558,6 @@
             
             // Definir imagem principal
             document.getElementById('modalMainImage').src = imgSrc;
-            
-            // Criar thumbnails (usando a mesma imagem 3x para exemplo)
-            const thumbnailsContainer = document.getElementById('modalThumbnails');
-            thumbnailsContainer.innerHTML = '';
-            
-            for (let i = 0; i < 3; i++) {
-                const thumbnail = document.createElement('div');
-                thumbnail.className = 'modal-thumbnail';
-                if (i === 0) thumbnail.classList.add('active');
-                
-                const img = document.createElement('img');
-                img.src = imgSrc;
-                img.alt = `Imagem ${i+1} do produto`;
-                
-                thumbnail.appendChild(img);
-                thumbnail.addEventListener('click', () => {
-                    document.querySelectorAll('.modal-thumbnail').forEach(t => t.classList.remove('active'));
-                    thumbnail.classList.add('active');
-                    document.getElementById('modalMainImage').src = imgSrc;
-                });
-                
-                thumbnailsContainer.appendChild(thumbnail);
-            }
             
             // Armazenar produto selecionado
             selectedProduct = {
@@ -2485,61 +2598,6 @@
                 cep = cep.replace(/^(\d{5})(\d)/, '$1-$2');
             }
             return cep;
-        }
-
-        // Configurar eventos para os novos elementos
-        function setupProductModals() {
-            // Fechar modais
-            document.getElementById('closeProductModal').addEventListener('click', closeProductModal);
-            document.getElementById('closeAddressModal').addEventListener('click', closeAddressModal);
-            document.getElementById('closePaymentModal').addEventListener('click', closePaymentModal);
-            
-            // Botão Comprar na modal de produto
-            document.getElementById('modalBuyBtn').addEventListener('click', function() {
-                closeProductModal();
-                openAddressModal();
-            });
-            
-            // Formulário de endereço
-            document.getElementById('addressForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Obter dados do formulário
-                currentAddress = {
-                    cep: document.getElementById('cep').value,
-                    rua: document.getElementById('rua').value,
-                    numero: document.getElementById('numero').value,
-                    complemento: document.getElementById('complemento').value,
-                    bairro: document.getElementById('bairro').value,
-                    cidade: document.getElementById('cidade').value,
-                    estado: document.getElementById('estado').value
-                };
-                
-                closeAddressModal();
-                openPaymentModal();
-            });
-            
-            // Formatar CEP
-            document.getElementById('cep').addEventListener('input', function() {
-                this.value = formatCEP(this.value);
-            });
-            
-            // Botão de confirmação de pagamento
-            document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
-                closePaymentModal();
-                
-                // Mostrar mensagem de sucesso
-                alert(`Obrigado pela compra!\n\nProduto: ${selectedProduct.title}\nValor: ${selectedProduct.price}\n\nSeu pedido será enviado para:\n${currentAddress.rua}, ${currentAddress.numero}\n${currentAddress.bairro}, ${currentAddress.cidade}-${currentAddress.estado}\nCEP: ${currentAddress.cep}`);
-            });
-            
-            // Fechar modais ao clicar fora
-            window.addEventListener('click', function(event) {
-                if (event.target.classList.contains('product-modal')) {
-                    closeProductModal();
-                    closeAddressModal();
-                    closePaymentModal();
-                }
-            });
         }
     </script>
 </body>
